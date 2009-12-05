@@ -4,15 +4,16 @@
 === Introduction ====
 
 It's recommended to use XFileDialog to replace AWT's FileDialog. 
-Since they have the same interface, FileDialog object can be easily replaced 
-with XFileDialog object. 
+
+Since they have the same interface, a FileDialog object can be easily replaced 
+with a XFileDialog object. 
 
 
 === Details ====
 
 
-  * The XFileDialog object must be created in EDT thread, i.e., the XFileDialog should be defined in ActionListener functions. 
-  * The XFileDialog uses the window title of its parent frame to get the native Window handle. Therefore, the parent frame's title should always be unique. It may cause error when two running apps have the identical window title. If you do not like this restriction, please read the following references and implement by yourself. 
+  * A XFileDialog object must be created in EDT thread, i.e., a XFileDialog should be defined in ActionListener functions. 
+  * The XFileDialog uses the window title of its parent JFrame to get the native Window handle. Therefore, the parent frame's title should always be unique. It may cause error when two running apps have the identical window title. If you do not like this restriction, please read the following references and implement by yourself. 
 
 
          * http://forums.sun.com/thread.jspa?threadID=593759  
@@ -20,4 +21,4 @@ with XFileDialog object.
 
 
 
-  * XFileDialog may not work smoothly with some third party Java LookandFeels. You can either switch to default NIMBUS lookandfeel or ask their authors for technical support. 
+  * XFileDialog may not work smoothly with some third party Java LookandFeels. You can either switch to the default NIMBUS lookandfeel or ask their authors for technical support. 
