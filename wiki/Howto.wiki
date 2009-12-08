@@ -21,4 +21,4 @@ with a XFileDialog object.
 
 
 
-  * XFileDialog may not work smoothly with some third party Java LookandFeels. You can either switch to the default NIMBUS lookandfeel or ask their authors for technical support. 
+  * XFileDialog may not work smoothly with some third party Java LookandFeels. You can either switch to the default lookandfeels (NIMBUS,OCEAN,system) or ask their authors for technical support. 
