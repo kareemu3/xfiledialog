@@ -13,12 +13,5 @@ with a XFileDialog object.
 
 
   * A XFileDialog object must be created in EDT thread, i.e., a XFileDialog should be defined in ActionListener functions. 
-  * The XFileDialog uses the window title of its parent JFrame to get the native Window handle. Therefore, the parent frame's title should always be unique. It may cause error when two running apps have the identical window title. If you do not like this restriction, please read the following references and implement by yourself. 
-
-
-         * http://forums.sun.com/thread.jspa?threadID=593759  
-         * http://stackoverflow.com/questions/386792/in-java-swing-how-do-you-get-a-win32-window-handle-hwnd-reference-to-a-window
-
-
-
+  
   * XFileDialog may not work smoothly with some third party Java LookandFeels. You can either switch to the default lookandfeels (NIMBUS,OCEAN,system) or ask their authors for technical support. 
