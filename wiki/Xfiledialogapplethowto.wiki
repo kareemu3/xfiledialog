@@ -1,4 +1,4 @@
-*Procedures: how to use xfiledialog in applets*
+==Procedures: how to use xfiledialog in applets==
 
 ===    Step 1====
 If you do not have any certificate, buy one or create a self-signed certificate at first. 
@@ -86,4 +86,3 @@ Applets with native dlls should be deployed with jnlp and deployJava.js
 
      * new method for applet deployment  
      http://java.sun.com/javase/6/docs/technotes/guides/jweb/deployment_advice.html
-
