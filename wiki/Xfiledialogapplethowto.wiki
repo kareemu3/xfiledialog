@@ -1,6 +1,6 @@
 *Procedures: how to use xfiledialog in applets*
 
-===Step 1====
+===    Step 1====
 If you do not have any certificate, buy one or create a self-signed certificate at first. 
 
 to create a self-signed certificate: 
@@ -8,7 +8,7 @@ to create a self-signed certificate:
       keytool -genkey -alias personalkey
 }}}
 
-===Step 2====
+===    Step 2====
 Package all class and resource files into a jar. 
 
 e.g. 
@@ -17,21 +17,21 @@ e.g.
 }}}
 
 
-===Step 3====
+===    Step 3====
 Use the certificate to sign the jar. 
 
 {{{
       jarsigner hello.jar personalkey
 }}}
 
-===Step 4====
+===    Step 4====
 Package the xfiledialog.dll into a jar file. 
 
 {{{
       jar cvf xfiledialog.jar xfiledialog.dll 
 }}}
 
-===Step 5====
+===    Step 5====
 Deploy the applet. 
 Applets with native dlls should be deployed with jnlp and deployJava.js  
 
@@ -79,13 +79,11 @@ Applets with native dlls should be deployed with jnlp and deployJava.js
 
 ---
 
-===References=== 
+===    References=== 
 
      * code signing 
      http://java.sun.com/developer/onlineTraining/Programming/JDCBook/signed.html
 
      * new method for applet deployment  
      http://java.sun.com/javase/6/docs/technotes/guides/jweb/deployment_advice.html
-
-
 
