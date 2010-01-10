@@ -1,13 +1,91 @@
-#Procedures: how to use xfiledialog in applets
+*Procedures: how to use xfiledialog in applets*
 
-=  =
+===Step 1====
+If you do not have any certificate, buy one or create a self-signed certificate at first. 
 
-Add your content here.
+to create a self-signed certificate: 
+{{{
+      keytool -genkey -alias personalkey
+}}}
+
+===Step 2====
+Package all class and resource files into a jar. 
+
+e.g. 
+{{{
+      jar cvf hello.jar helloapplet.class net
+}}}
 
 
-= Details =
+===Step 3====
+Use the certificate to sign the jar. 
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+{{{
+      jarsigner hello.jar personalkey
+}}}
+
+===Step 4====
+Package the xfiledialog.dll into a jar file. 
+
+{{{
+      jar cvf xfiledialog.jar xfiledialog.dll 
+}}}
+
+===Step 5====
+Deploy the applet. 
+Applets with native dlls should be deployed with jnlp and deployJava.js  
+
+   * Copy the deployJava.js from Sun/Oracle to your server at first. As the internet connection is not always stable, this javascript file and the jar file should be kept on the same server.  
+
+     http://www.java.com/js/deployJava.js
+   
+   * Write a jnlp file to tell the applet how to find the native dll 
+
+    {{{
+	<?xml version="1.0" encoding="UTF-8"?>
+	<jnlp spec="1.0+" codebase="" href="">
+	    <information>
+        	<title>helloapplet</title>
+	        <vendor>stevpan</vendor>
+	    </information>
+	    <resources>
+        	<!-- Application Resources -->
+	        <j2se version="1.6+"
+        	      href="http://java.sun.com/products/autodl/j2se" />
+	        <jar href="hello.jar" main="true" />
+		<nativelib href="xfiledialog.jar" />
+
+	    </resources>
+	    <applet-desc 
+        	 name="helloapplet"
+	         main-class="helloapplet"
+        	 width="600"
+	         height="400">
+	     </applet-desc>
+	     <update check="background"/>
+	</jnlp>					
+    }}}
+
+   * Write the html/javascript code 
+   {{{
+    <script src="deployJava.js"></script>
+    <script> 
+        var attributes = { code:'helloapplet',  width:600, height:400} ; 
+        var parameters = {jnlp_href: 'applet.jnlp'} ; 
+        deployJava.runApplet(attributes, parameters, '1.6'); 
+    </script>
+   }}}
+
+
+---
+
+===References=== 
+
+     * code signing 
+     http://java.sun.com/developer/onlineTraining/Programming/JDCBook/signed.html
+
+     * new method for applet deployment  
+     http://java.sun.com/javase/6/docs/technotes/guides/jweb/deployment_advice.html
+
+
+
