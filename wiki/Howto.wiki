@@ -15,3 +15,149 @@ with a XFileDialog object.
   * A XFileDialog object must be created in EDT thread, i.e., a XFileDialog should be defined in ActionListener functions. 
   
   * XFileDialog may not work smoothly with some third party Java LookandFeels. You can either switch to the default lookandfeels (NIMBUS,OCEAN,system) or ask their authors for technical support. 
+
+===A helloworld sample=== 
+
+{{{
+import java.awt.*;
+import java.awt.event.*;
+import java.applet.*;
+import java.util.*;
+import javax.swing.*;
+import net.tomahawk.*; 
+
+public class helloapplet extends JApplet implements ActionListener
+{
+  String title1= "Open File Dialog (single-selection)"; 
+  String title2= "Open File Dialog (multi-selection)"; 
+  String title3= "Open Folder Dialog (single-selection for folder)";  
+  String title4= "Open Item Dialog (multi-selection for folders)";  
+  private JTextField selectioncontent; 
+  
+   
+   public void actionPerformed(ActionEvent e)
+   {
+
+    String action = e.getActionCommand();  	   
+
+    if(action.equals(title1)) 
+    {
+    XFileDialog dlg=new XFileDialog(helloapplet.this);    
+    dlg.setMode(FileDialog.LOAD); 
+    dlg.setTitle(title1); 
+    dlg.show(); 
+    String content =dlg.getFile(); 
+    selectioncontent.setText("filename:" + content); 
+    dlg.dispose(); 
+
+    }
+
+    if(action.equals(title2) ) 
+    {
+    XFileDialog dlg=new XFileDialog(helloapplet.this);    
+    dlg.setMode(FileDialog.LOAD); 
+    dlg.setMultiSelectionEnabled(true); 
+    dlg.setTitle(title2); 
+    dlg.show(); 
+    String content =null; 
+    String[] filenames = dlg.getFiles(); 
+    
+    if(filenames!=null && filenames.length>0) 
+    {
+    content=""; 	    
+    for(int i=0;i<filenames.length;i++) 
+    {
+	    System.out.println("returned filenames in helloapplet: " + filenames[i]); 
+	    content+= filenames[i] + "; "; 
+    }
+    }
+    selectioncontent.setText("filenames:    " + content); 
+    dlg.dispose(); 
+
+    }
+
+
+    if(action.equals(title3) ) 
+    {
+    XFileDialog dlg=new XFileDialog(helloapplet.this);    
+    dlg.setTitle(title3); 
+    dlg.show(); 
+    String content = dlg.getFolder(); 
+
+    selectioncontent.setText("folder name:    " + content); 
+    dlg.dispose(); 
+
+    }
+
+    if(action.equals(title4) ) 
+    {
+    XFileDialog dlg=new XFileDialog(helloapplet.this);    
+    dlg.setTitle(title4); 
+    dlg.show(); 
+    String[] itemNames = dlg.getFolders(); 
+    if(itemNames!=null && itemNames.length > 0) 
+    {
+    String content= ""; 	    
+    for(int i=0;i<itemNames.length;i++)	    
+    content += itemNames[i] + ";"; 	    
+
+    selectioncontent.setText("folder names:    " + content); 
+    }
+    dlg.dispose(); 
+
+    }
+
+    }
+
+  public void init(){
+    JPanel main = new JPanel(new BorderLayout());
+    JButton button1 = new JButton(title1);
+    JButton button2 = new JButton(title2);
+    JButton button3 = new JButton(title3);
+    JButton button4 = new JButton(title4);
+    JLabel label1 = new JLabel("Selection:"); 
+    selectioncontent = new JTextField();
+
+    main.setLayout(new FlowLayout()); 
+    this.setPreferredSize(new Dimension(600, 400)); 
+    label1.setPreferredSize(new Dimension(500, 40)); 
+    selectioncontent.setPreferredSize(new Dimension(500, 25)); 
+    button1.setPreferredSize(new Dimension(500, 50)); 
+    button2.setPreferredSize(new Dimension(500, 50)); 
+    button3.setPreferredSize(new Dimension(500, 50)); 
+    button4.setPreferredSize(new Dimension(500, 50)); 
+
+    main.add(label1); 
+    main.add(selectioncontent);
+    main.add(button1);
+    main.add(button2); 
+    main.add(button3); 
+    main.add(button4); 
+
+
+    getContentPane().add(main);
+    button1.addActionListener(this); 
+    button2.addActionListener(this); 
+    button3.addActionListener(this); 
+    button4.addActionListener(this); 
+
+    validate(); 
+  	}
+
+
+  public void start()
+  {
+
+  }
+
+  public void stop()
+  {
+  }
+  
+  public void destroy()
+  {
+
+  }
+}
+
+}}}
