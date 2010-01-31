@@ -14,7 +14,7 @@ with a XFileDialog object.
 
   * A XFileDialog object must be created in EDT thread, i.e., a XFileDialog should be defined in ActionListener functions. 
   
-  * The xfiledialog.dll should be placed in the same folder of the classfiles or be included in "PATH" or java.library.path so that it can be found by Java. 
+  * The xfiledialog.dll should be placed in the same folder of the classfiles or be put in a folder included in "PATH" (or java.library.path) so that it can be found by Java. 
 
   * Do not change the package name "net.tomahawk". If you had to, you should change some C code at the same time. 
      
