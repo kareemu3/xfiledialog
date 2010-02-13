@@ -23,6 +23,7 @@ with a XFileDialog object.
 ===A helloworld sample=== 
 
 {{{
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -34,6 +35,7 @@ class helloworld extends JFrame implements ActionListener
   String title2= "Open File Dialog (multi-selection)"; 
   String title3= "Open Folder Dialog (single-selection for folder)";  
   String title4= "Open Folder Dialog (multi-selection for folders)";  
+  String title5 = "Open Thumbnail Dialog (multi-selection)"; 
   private JTextField selectioncontent; 
   
   public helloworld()
@@ -47,6 +49,8 @@ class helloworld extends JFrame implements ActionListener
     JButton button2 = new JButton(title2);
     JButton button3 = new JButton(title3);
     JButton button4 = new JButton(title4);
+    JButton button5 = new JButton(title5);
+
     JLabel label1 = new JLabel("Selection:"); 
     selectioncontent = new JTextField();
 
@@ -58,6 +62,7 @@ class helloworld extends JFrame implements ActionListener
     button2.setPreferredSize(new Dimension(500, 50)); 
     button3.setPreferredSize(new Dimension(500, 50)); 
     button4.setPreferredSize(new Dimension(500, 50)); 
+    button5.setPreferredSize(new Dimension(500, 50)); 
 
     main.add(label1); 
     main.add(selectioncontent);
@@ -65,6 +70,7 @@ class helloworld extends JFrame implements ActionListener
     main.add(button2); 
     main.add(button3); 
     main.add(button4); 
+    main.add(button5); 
 
 
     getContentPane().add(main);
@@ -73,6 +79,7 @@ class helloworld extends JFrame implements ActionListener
     button2.addActionListener(this); 
     button3.addActionListener(this); 
     button4.addActionListener(this); 
+    button5.addActionListener(this); 
 
    pack(); 
   }
@@ -149,6 +156,33 @@ class helloworld extends JFrame implements ActionListener
 
     }
 
+
+    if(action.equals(title5) ) 
+    {
+    XFileDialog dlg=new XFileDialog(helloworld.this);    
+    dlg.setMode(FileDialog.LOAD); 
+    dlg.setMultiSelectionEnabled(true); 
+    dlg.setThumbnail(true); 
+    dlg.setTitle(title5); 
+    dlg.show(); 
+    String content =null; 
+    String[] filenames = dlg.getFiles(); 
+    
+    if(filenames!=null && filenames.length>0) 
+    {
+    content=""; 	    
+    for(int i=0;i<filenames.length;i++) 
+    {
+	    System.out.println("returned filenames in helloworld: " + filenames[i]); 
+	    content+= filenames[i] + "; "; 
+    }
+    }
+    selectioncontent.setText("filenames:    " + content); 
+    dlg.dispose(); 
+
+    }
+
+
     }
 
 
@@ -159,4 +193,11 @@ public static void main(String[] args)
 
 
 }
+
+
+
+
+
+
+
 }}}
