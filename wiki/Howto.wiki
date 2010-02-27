@@ -6,13 +6,13 @@
 It's recommended to use XFileDialog to replace AWT's FileDialog. 
 
 Since they have similar interface, a FileDialog object can be easily replaced 
-with a XFileDialog object. 
+with an XFileDialog object. 
 
 
 === Details ====
 
 
-  * A XFileDialog object must be created in EDT thread, i.e., a XFileDialog should be defined in ActionListener functions. 
+  * A XFileDialog object must be created in EDT thread, i.e., an XFileDialog should be defined in ActionListener functions. 
   
   * The xfiledialog.dll should be placed in the same folder of the class files,  or it should be put in a folder included in "PATH" (or java.library.path) so that it can be found by Java. 
 
