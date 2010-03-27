@@ -8,7 +8,7 @@ It's recommended to use XFileDialog to replace AWT's FileDialog.
 Since they have similar interface, a FileDialog object can be easily replaced 
 with an XFileDialog object. 
 
-Before using, it's recommended to test it in your environment at first. 
+Before using, it's recommended to make a test in your environment at first. 
 
 === Verify/Test ====
   * There's a helloworld.class included in the zip file. 
