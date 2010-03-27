@@ -22,7 +22,7 @@ It's recommended to make a test before using in your environment.
 
    * Copy the xfiledialog.jar to some folder, and add xfiledialog.jar to your CLASSPATH.    
   
-     You could also add the Java source code "XFileDialog.java" directly in your project instead of using the "xfiledialog.jar" in classpath. However, in this case, please do not change the packnage name "net.tomahawk". Otherwise, you should change the C code too. 
+     You could also add the Java source code "XFileDialog.java" directly in your project instead of using the "xfiledialog.jar" in classpath. However, in this case, please do not change the package name "net.tomahawk". Otherwise, you should change the C code too. 
 
    * Write your code according to the "helloworld" sample on this page, pay attention to "Other details". 
 
