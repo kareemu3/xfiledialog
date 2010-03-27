@@ -13,23 +13,29 @@
    Package all class and resource files into a jar. 
 
    e.g. 
+   In xfiledialog's root directory, run the following two commands 
+   (use ant if you wish) 
    {{{
-      jar cvf hello.jar helloapplet.class net
+      jar cvf appletdemo/hello.jar helloapplet.class
+      jar uvf appletdemo/hello.jar -C src_java net
    }}}
 
 
 ===    Step 3====
    Use the certificate to sign the jar. 
-
+   e.g. 
+   In xfiledialog's root directory
    {{{
-      jarsigner hello.jar personalkey
+   cd appletdemo
+   jarsigner hello.jar personalkey
    }}}
 
 ===    Step 4====
    Package the xfiledialog.dll into a jar file. 
-
+   e.g. 
+   In xfiledialog's appletdemo directory
    {{{
-      jar cvf xfiledialog.jar xfiledialog.dll 
+     jar cvf xfiledialog.jar ../xfiledialog.dll ../xfiledialog64.dll
    }}}
 
 ===    Step 5====
