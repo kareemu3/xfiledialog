@@ -39,11 +39,11 @@ It's recommended to make a test before using in your environment.
 
   * A XFileDialog object must be created in EDT thread, i.e., an XFileDialog should be defined in ActionListener functions. 
   
-  * The xfiledialog.dll should be placed in the same folder of the class files,  or it should be put in a folder included in "PATH" (or java.library.path) so that it can be found by Java. 
+  * The xfiledialog.dll should be placed in the current working folder,  or  in a folder included in "PATH" (or java.library.path) so that it can be found by Java. 
 
   * Do not change the package name "net.tomahawk". If you had to, you should change some C code at the same time. 
      
-  * XFileDialog may cause rendering artifacts when working with some third party Java LookandFeels. You can either switch to the default lookandfeels (NIMBUS,OCEAN,system) or ask their authors for technical support. 
+  * XFileDialog may cause rendering artifacts when working with some third party Java LookandFeels. You can either switch to the default lookandfeels (NIMBUS,OCEAN,system) or ask authors of these LAFs for technical support. 
 
 ===A helloworld sample=== 
 
