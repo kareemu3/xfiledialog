@@ -114,7 +114,7 @@ class helloworld extends JFrame implements ActionListener
 
     String action = e.getActionCommand();  	   
 
-    if(action.equals(title1)) 
+    if(action.equals(title1))  // get single file 
     {
     XFileDialog dlg=new XFileDialog(helloworld.this);    
     dlg.setMode(FileDialog.LOAD); 
@@ -122,11 +122,14 @@ class helloworld extends JFrame implements ActionListener
     dlg.show(); 
     String content =dlg.getFile(); 
     selectioncontent.setText("filename:" + content); 
+    
+    System.out.println("current Dir: " + dlg.getDirectory() ); 
+
     dlg.dispose(); 
 
     }
 
-    if(action.equals(title2) ) 
+    if(action.equals(title2) )  // get multi-files
     {
     XFileDialog dlg=new XFileDialog(helloworld.this);    
     dlg.setMode(FileDialog.LOAD); 
@@ -144,6 +147,9 @@ class helloworld extends JFrame implements ActionListener
 	    System.out.println("returned filenames in helloworld: " + filenames[i]); 
 	    content+= filenames[i] + "; "; 
     }
+
+      System.out.println("current dir: " + dlg.getDirectory() ); 
+
     }
     selectioncontent.setText("filenames:    " + content); 
     dlg.dispose(); 
@@ -151,7 +157,7 @@ class helloworld extends JFrame implements ActionListener
     }
 
 
-    if(action.equals(title3) ) 
+    if(action.equals(title3) )  // get a folder
     {
     XFileDialog dlg=new XFileDialog(helloworld.this);    
     dlg.setTitle(title3); 
@@ -159,11 +165,14 @@ class helloworld extends JFrame implements ActionListener
     String content = dlg.getFolder(); 
 
     selectioncontent.setText("folder name:    " + content); 
+
+    System.out.println("current Dir: " + dlg.getDirectory() ); 
+
     dlg.dispose(); 
 
     }
 
-    if(action.equals(title4) ) 
+    if(action.equals(title4) )  // get folders
     {
     XFileDialog dlg=new XFileDialog(helloworld.this);    
     dlg.setTitle(title4); 
@@ -174,15 +183,15 @@ class helloworld extends JFrame implements ActionListener
     String content= ""; 	    
     for(int i=0;i<itemNames.length;i++)	    
     content += itemNames[i] + ";"; 	    
-
     selectioncontent.setText("folder names:    " + content); 
     }
+    System.out.println("current Dir: " + dlg.getDirectory() ); 
     dlg.dispose(); 
 
     }
 
 
-    if(action.equals(title5) ) 
+    if(action.equals(title5) )  // get files in thumbnail mode 
     {
     XFileDialog dlg=new XFileDialog(helloworld.this);    
     dlg.setMode(FileDialog.LOAD); 
@@ -203,6 +212,8 @@ class helloworld extends JFrame implements ActionListener
     }
     }
     selectioncontent.setText("filenames:    " + content); 
+    System.out.println("current Dir: " + dlg.getDirectory() ); 
+
     dlg.dispose(); 
 
     }
