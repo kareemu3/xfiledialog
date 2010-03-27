@@ -11,7 +11,7 @@ The following procedures work in 32 bit Windows and require command prompt.
 *Note*: If your CPU belongs to X64 (amd64, pentium 4 with EM64T, intel multi-core with EM64T) and you are using 64 bit Java/Windows, or you prefer GUI dev environment, please modify it accordingly. 
 
 
-To compile 32 bit X86 DLL 
+====To compile 32 bit X86 DLL ====
 
   * Add JDK's bin directory into the system variable "PATH" 
   * Set up the Visual stduio's environment variables 
@@ -28,7 +28,7 @@ To compile 32 bit X86 DLL
      }}}
 
 
-To compile 64 bit X64 DLL 
+==== To compile 64 bit X64 DLL ====
 
   * Add JDK's bin directory into the system variable "PATH" 
   * Set up the Visual stduio's environment variables 
