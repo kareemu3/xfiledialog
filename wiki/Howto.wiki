@@ -18,7 +18,7 @@ It's recommended to make a test before using in your environment.
 
    * Unpack the xfiledialog zip file. 
 
-   *Copy the xfiledialog.dll and xfiledialog64.dll to your working directory or some folder included in system environment "PATH". 
+   * Copy the xfiledialog.dll and xfiledialog64.dll to your working directory or some folder included in system environment "PATH". 
 
    * Copy the xfiledialog.jar to some folder, and add xfiledialog.jar to your CLASSPATH.    
   
