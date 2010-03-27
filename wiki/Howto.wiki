@@ -8,6 +8,14 @@ It's recommended to use XFileDialog to replace AWT's FileDialog.
 Since they have similar interface, a FileDialog object can be easily replaced 
 with an XFileDialog object. 
 
+Before using, it's recommended to test it in your environment at first. 
+
+=== Verify/Test ====
+  * There's a helloworld.class included in the zip file. 
+   
+  * You could unpack the zip file and launch helloworld.class with a batch file "run.bat". 
+
+  * If it could not work as expected, you could email me the console output, the Java version and OS info.   
 
 === Details ====
 
