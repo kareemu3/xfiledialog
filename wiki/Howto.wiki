@@ -3,12 +3,9 @@
 
 === Introduction ====
 
-It's recommended to use XFileDialog to replace AWT's FileDialog. 
+It's recommended to use XFileDialog to replace AWT's FileDialog. Since they have similar interface, a FileDialog object can be easily replaced with an XFileDialog object. 
 
-Since they have similar interface, a FileDialog object can be easily replaced 
-with an XFileDialog object. 
-
-Before using, it's recommended to make a test in your environment at first. 
+It's recommended to make a test before using in your environment. 
 
 === Verify/Test ====
   * There's a helloworld.class included in the zip file. 
@@ -17,7 +14,27 @@ Before using, it's recommended to make a test in your environment at first.
 
   * If it could not work as expected, you could email me the console output, the Java version and OS info.   
 
-=== Details ====
+=== Main procedures ====
+
+   * Unpack the xfiledialog zip file. 
+
+   *Copy the xfiledialog.dll and xfiledialog64.dll to your working directory or some folder included in system environment "PATH". 
+
+   * Copy the xfiledialog.jar to some folder, and add xfiledialog.jar to your CLASSPATH.    
+  
+     You could also add the Java source code "XFileDialog.java" directly in your project instead of using the "xfiledialog.jar" in classpath. However, in this case, please do not change the packnage name "net.tomahawk". Otherwise, you should change the C code too. 
+
+   * Write your code according to the "helloworld" sample on this page, pay attention to "Other details". 
+
+
+===== For Ant Users====
+    
+   No specific requirements 
+
+====  For Eclipse Users====
+   No specific requirements   
+
+=== Other Details ====
 
 
   * A XFileDialog object must be created in EDT thread, i.e., an XFileDialog should be defined in ActionListener functions. 
