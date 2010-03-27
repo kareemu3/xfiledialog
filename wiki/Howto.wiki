@@ -7,7 +7,7 @@ It's recommended to use XFileDialog to replace AWT's FileDialog. Since they have
 
 It's recommended to make a test before using in your environment. 
 
-=== Verify/Test ====
+=== Verify/Test at first ====
   * There's a helloworld.class included in the zip file. 
    
   * You could unpack the zip file and launch helloworld.class with a batch file "run.bat". 
