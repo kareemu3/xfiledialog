@@ -1,3 +1,4 @@
+#labels Featured
 ==Procedures: how to use xfiledialog in applets==
 
 ===    Step 1====
