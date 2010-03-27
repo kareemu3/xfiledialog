@@ -35,7 +35,7 @@
    e.g. 
    In xfiledialog's appletdemo directory
    {{{
-     jar cvf xfiledialog.jar ../xfiledialog.dll ../xfiledialog64.dll
+     jar cvf xfiledialog_dll.jar ../xfiledialog.dll ../xfiledialog64.dll
    }}}
 
 ===    Step 5====
@@ -60,7 +60,7 @@
 	        <j2se version="1.6+"
         	      href="http://java.sun.com/products/autodl/j2se" />
 	        <jar href="hello.jar" main="true" />
-		<nativelib href="xfiledialog.jar" />
+		<nativelib href="xfiledialog_dll.jar" />
 
 	    </resources>
 	    <applet-desc 
