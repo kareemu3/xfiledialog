@@ -22,7 +22,7 @@ It's recommended to make a test before using in your environment.
 
    * Copy the xfiledialog.jar to some folder, and add xfiledialog.jar to your CLASSPATH.    
   
-     You could also add the Java source code "XFileDialog.java" directly in your project instead of using the "xfiledialog.jar" in classpath. However, in this case, please do not change the package name "net.tomahawk". Otherwise, you should change the C code too. 
+     You could also add the Java source code "XFileDialog.java" directly into your project instead of using the "xfiledialog.jar" in classpath. However, in this case, please do not change the package name "net.tomahawk", otherwise, you should change the C code as well. 
 
    * Write your code according to the "helloworld" sample on this page, pay attention to "Other details". 
 
@@ -41,7 +41,7 @@ It's recommended to make a test before using in your environment.
   
   * The xfiledialog.dll should be placed in the current working folder,  or  in a folder included in "PATH" (or java.library.path) so that it can be found by Java. 
 
-  * Do not change the package name "net.tomahawk". If you had to, you should change some C code at the same time. 
+  * Do not change the package name "net.tomahawk". If you had to, you should change some C code as well. 
      
   * XFileDialog may cause rendering artifacts when working with some third party Java LookandFeels. You can either switch to the default lookandfeels (NIMBUS,OCEAN,system) or ask authors of these LAFs for technical support. 
 
