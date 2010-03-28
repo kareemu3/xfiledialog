@@ -20,6 +20,10 @@ The following procedures work in 32 bit Windows and require command prompt.
      {{{
          c:\vs2008\VC\bin\vcvars32.bat
      }}}  
+
+  * Edit the compile.bat: 
+    according to your JDK home directory, set the correct include directory in the "cl" command 
+
   * Run compile.bat in xfiledialog's root directory. 
   * If the compilation is successful, a new file "xfiledialog.dll"will be created. 
   * Test 
@@ -37,6 +41,8 @@ The following procedures work in 32 bit Windows and require command prompt.
      {{{
        c:\vs2008\VC\bin\x86_amd64\vcvarsx86_amd64.bat
      }}}  
+  * Edit the compile64.bat: 
+    according to your JDK home directory, set the correct include directory in the "cl" command 
   * Run compile64.bat in xfiledialog's root directory. 
   * If the compilation is successful, a new file "xfiledialog64.dll"will be created. 
   * Test 
