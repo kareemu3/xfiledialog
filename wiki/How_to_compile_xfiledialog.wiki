@@ -9,7 +9,7 @@
 The following procedures work in 32 bit Windows and require command prompt. 
 
 
-*Note*: If your CPU belongs to X64 (amd64, pentium 4 with EM64T, intel multi-core with EM64T) and you are using 64 bit Java/Windows, or you prefer GUI dev environment, please modify it accordingly. 
+*Note*: If your CPU belongs to X64 (amd64, pentium 4 with EM64T, intel multi-core with EM64T) and you are using 64 bit Java/Windows, or you prefer GUI dev environment, please modify it yourself. 
 
 
 ====To compile 32 bit X86 DLL ====
@@ -22,7 +22,7 @@ The following procedures work in 32 bit Windows and require command prompt.
      }}}  
 
   * Edit the compile.bat: 
-    according to your JDK home directory, set the correct include directory in the "cl" command 
+    according to your JDK home directory and visual studio home directory, set the correct include directories in the "cl" command 
 
   * Run compile.bat in xfiledialog's root directory. 
   * If the compilation is successful, a new file "xfiledialog.dll"will be created. 
@@ -42,7 +42,7 @@ The following procedures work in 32 bit Windows and require command prompt.
        c:\vs2008\VC\bin\x86_amd64\vcvarsx86_amd64.bat
      }}}  
   * Edit the compile64.bat: 
-    according to your JDK home directory, set the correct include directory in the "cl" command 
+    according to your JDK home directory and visual studio home directory, set the correct include directories in the "cl" command 
   * Run compile64.bat in xfiledialog's root directory. 
   * If the compilation is successful, a new file "xfiledialog64.dll"will be created. 
   * Test 
