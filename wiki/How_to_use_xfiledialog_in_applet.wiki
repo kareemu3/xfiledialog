@@ -31,7 +31,7 @@
    }}}
 
 ===    Step 4====
-   Package the xfiledialog.dll into a jar file. 
+   Package the xfiledialog.dll, xfiledialog64.dll into a jar file. 
    e.g. 
    In xfiledialog's appletdemo directory
    {{{
