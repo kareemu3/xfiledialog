@@ -35,7 +35,10 @@
    e.g. 
    In xfiledialog's appletdemo directory
    {{{
-     jar cvf xfiledialog_dll.jar ../xfiledialog.dll ../xfiledialog64.dll
+   cd ..
+   jar cvf xfiledialog_dll.jar *.dll *.manifest
+   move xfiledialog_dll.jar appletdemo
+   cd appletdemo
    }}}
 
 ===    Step 5====
