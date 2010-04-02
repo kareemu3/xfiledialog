@@ -46,7 +46,10 @@ The following procedures work in 32 bit Windows and require command prompt.
   * Run compile64.bat in xfiledialog's root directory. 
   * If the compilation is successful, a new file "xfiledialog64.dll"will be created. 
   * Test 
-     e.g. run the following command in xfiledialog's root directory
+
+     e.g. 
+      1. copy the xfiledialog64.dll, helloworld.class, xfiledialog.jar, run.bat to a Windows X64 machine. 
+      2. In the X64 machine, run the following command
      {{{
       run.bat 
      }}}
