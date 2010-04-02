@@ -41,7 +41,15 @@
    cd appletdemo
    }}}
 
-===    Step 5====
+===    Step 5 ==== 
+   Important! Sign the nativelib jar file too! 
+
+   jarsigner xfiledialog_dll.jar personalkey 
+
+   Otherwise, the applet can not load the library and may throw an 
+   UnsatisfiedLinkError Exception. 
+
+===    Step 6====
    Deploy the applet. 
    Applets with native dlls should be deployed with jnlp and deployJava.js  
 
