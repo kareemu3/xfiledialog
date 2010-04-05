@@ -32,18 +32,30 @@ It's recommended to make a test before using in your environment.
    No specific requirements 
 
 ====  For Eclipse Users====
+   
    No specific requirements   
 
 === Other Details ====
 
 
-  * An XFileDialog object must be created in EDT thread, i.e., an XFileDialog should be defined in ActionListener functions. 
+  * The parent frame of XFileDialog's constructor function  could not be NULL, otherwise, the DLL code does not know which window to put the dialog before. 
+    constructor1: XFileDialog(Frame parent); 
+    constructor2: XFileDialog(Applet parent); 
+
+    
+  * An XFileDialog object should be created in EDT thread, i.e., an XFileDialog should be defined in ActionListener functions.
   
   * The xfiledialog.dll should be placed in the current working folder,  or  in a folder included in "PATH" (or java.library.path) so that it can be found by Java. 
 
   * Do not change the package name "net.tomahawk". If you had to, you should change some C code as well. 
      
   * XFileDialog may cause rendering artifacts when working with some third party Java LookandFeels. You can either switch to the default lookandfeels (NIMBUS,OCEAN,system) or ask authors of these LAFs for technical support. 
+   
+  * About "last visit" location: 
+    Currently, this should be done in users' program. I use a String array to keep currentDirs of all my dialogs and save them to configuration file when exiting. 
+
+     setDirecotry() is called before getFile() function. 
+
 
 ===A helloworld sample=== 
 
