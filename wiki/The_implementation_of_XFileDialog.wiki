@@ -1,20 +1,20 @@
 #labels Featured
-#The implementation of XFileDialog
+==The implementation of XFileDialog==
 
         Read the following links if you wish to compile it yourself or modify the code. 
 
         Email me if you find anything wrong in XFileDialog, or figure out better implementation. 
 
 
-        *Compilation from the command-line*: 
+        ====Compilation from the command-line==== 
 
              * http://msdn.microsoft.com/en-us/library/ms235639(VS.80).aspx
 
-        *JNI tutorial provided by Oracle(sun) 
+        ====JNI tutorial provided by Oracle(sun)==== 
              * http://java.sun.com/developer/onlineTraining/Programming/JDCBook/jni.html
 
 
-        *Integration of Windows handle and Java frame handle is based on*: 
+        ====Integration of Windows handle and Java frame handle is based on:==== 
      
              * How to get window handle with jawt.dll
 
@@ -23,42 +23,47 @@
               http://stackoverflow.com/questions/386792/in-java-swing-how-do-you-get-a-win32-window-handle-hwnd-reference-to-a-window
 
 
-        *Multiple-selection in all platforms is based on the standard CFileDialog*. 
+        ====Multiple-selection in all platforms is based on the standard CFileDialog==== 
 
           * Introduction to CFileDialog class on MSND
             http://msdn.microsoft.com/en-us/library/dk77e5e7.aspx
 
-        *Folder-selection filedialog in XP is based on customization of CFileDialog* 
+          * Folder-selection filedialog in XP is based on customization of CFileDialog  
+
           * Microsoft's ofnking examples (November 21, 2006) : 
             http://support.microsoft.com/kb/195034
 
-        * CFolderDialog by Rommel Santor (2003)
+          * CFolderDialog by Rommel Santor (2003)
             http://www.codeguru.com/cpp/w-d/dislog/dialogforselectingfolders/comments.php/c1883/?thread=24384
 
 
-        *Folder selection in Vista is based on IFileDialog*: 
+        ====Folder selection in Vista is based on IFileDialog==== 
 
-            * Introduction to Vista IFileDialog (Common Item Dialog) 
-             http://msdn.microsoft.com/en-us/library/bb776913(VS.85).aspx
+          * Introduction to Vista IFileDialog (Common Item Dialog)  
+            http://msdn.microsoft.com/en-us/library/bb776913(VS.85).aspx
 
 
-        *Setting thumbnail-viewmode in filedialog under XP/Vista is based on customization of CFileDialog* 
+          * Setting thumbnail-viewmode in filedialog under XP/Vista is based on customization of CFileDialog 
 
              
-            Very useful: http://msdn.microsoft.com/en-us/magazine/cc164009.aspx
+          Very useful: http://msdn.microsoft.com/en-us/magazine/cc164009.aspx
 
-            http://www.codeproject.com/KB/dialog/XFolderDialog.aspx
+          http://www.codeproject.com/KB/dialog/XFolderDialog.aspx
 
 
-        *Integration between Windows Unicode encoding and Java Unicode encoding* 
-      Confusing terminology: 
-      In Windows: SBCS often refers to ISO-8859-1 or ASCII charset 
+        ====Integration between Windows Unicode encoding and Java Unicode encoding==== 
 
-      In Windows: MBCS actually is equal to Windows "ANSI" in many cases. 
+        Confusing terminology: 
+    
+        * In Windows: SBCS often refers to ISO-8859-1 or ASCII charset 
 
-      In Windows: Unicode actually often means UTF-16
+        * In Windows: MBCS actually is equal to Windows "ANSI" in many cases. 
 
-      Although UTF-16 is a variable-width encoding, most characters in UTF-16 actually is 2 bytes or 16bit.   
+        * In Windows: Unicode actually often means UTF-16
+
+        * Although UTF-16 is a variable-width encoding, most characters in UTF-16 actually is 2 bytes or 16bit.   
+
+       Some Faqs
 
        * About windows encoding codepage 
          http://en.wikipedia.org/wiki/Windows_code_page
