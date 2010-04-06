@@ -56,6 +56,17 @@ It's recommended to make a test before using in your environment.
 
      setDirecotry() is called before getFile() function. 
 
+===Restrictions:=== 
+    * At most 1000 files (or folders) in multi-selection dialog 
+        If you wish to select more, please modify the MAX_SELECTION in C code, or change the CString array to a CList. 
+    * The major compatibility issue is in "XPThumbnailDialog.cpp". 
+      
+        Please read it carefully if you 're serious about future compatibility. 
+        
+        In my opinion, the possibility of conflict with future MS updates is quite low, because a lot of existing apps would not work if MS changed too much. 
+        
+        In the worst case, the thumbnail function will be disabled, the filedialog can still display and select files.   
+              
 
 ===A helloworld sample=== 
 
