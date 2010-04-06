@@ -5,7 +5,7 @@
 
 It's recommended to use XFileDialog to replace AWT's FileDialog. Since they have similar interface, an AWT FileDialog object can be easily replaced with an XFileDialog object. 
 
-It's recommended to make a test before using in your environment. 
+It's recommended to make a test before using in your environment. Please read the restrictions carefully if you wish to use it in important apps. 
 
 === Verify/Test at first ====
   * There's a helloworld.class included in the zip file. 
@@ -48,6 +48,8 @@ It's recommended to make a test before using in your environment.
   * The xfiledialog.dll should be placed in the current working folder,  or  in a folder included in "PATH" (or java.library.path) so that it can be found by Java. 
 
   * Do not change the package name "net.tomahawk". If you had to, you should change some C code as well. 
+    E.g. given that your package is com.example.util, the String "net_tomahawk" 
+    in all C code (*.cpp, *.h) should be replaced with "com_example_util" in this case.  
      
   * XFileDialog may cause rendering artifacts when working with some third party Java LookandFeels. You can either switch to the default lookandfeels (NIMBUS,OCEAN,system) or ask authors of these LAFs for technical support. 
    
@@ -61,7 +63,7 @@ It's recommended to make a test before using in your environment.
         If you wish to select more, please modify the MAX_SELECTION in C code, or change the CString array to a CList. 
     * The major compatibility issue is in "XPThumbnailDialog.cpp". 
       
-        Please read it carefully if you 're serious about future compatibility. 
+        Please read "XPThumbnailDialog.cpp" carefully if you 're serious about future compatibility. 
         
         In my opinion, the possibility of conflict with future MS updates is quite low, because a lot of existing apps would not work if MS changed too much. 
         
