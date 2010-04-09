@@ -1,6 +1,9 @@
 #labels Featured
 ==Procedures: how to use xfiledialog in applets==
 
+Demo of XFileDialog in Applet: 
+https://sites.google.com/site/jtvmaker/Home/xfiledialog-online-demo
+
 ===    Step 1====
    If you do not have any certificate, buy one or create a self-signed certificate at first. 
 
