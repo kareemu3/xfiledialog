@@ -78,7 +78,7 @@ It's recommended to make a test before using in your environment. Please read th
       
         Please read "XPThumbnailDialog.cpp" carefully if you 're serious about future compatibility. 
         
-        In my opinion, the possibility of conflict with future MS updates is quite low, because a lot of existing apps would not work if MS changed too much. On the Java side, if  Oracle/sun changed too much in future Java updates, similar native dialogs such as IBM's SWT may be affected too. 
+        In my opinion, the possibility of conflict with future MS updates is quite low, because a lot of existing apps would not work if MS changed too much. On the Java side, if  Oracle/sun changed too much in future Java updates, similar native dialogs such as IBM's SWT might be affected too. 
         
         In the worst case, the thumbnail function will be disabled, the filedialog can still display and select files.   
               
