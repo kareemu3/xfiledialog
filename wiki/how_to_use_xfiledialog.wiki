@@ -69,6 +69,9 @@ It's recommended to make a test before using in your environment. Please read th
 ===Restrictions:=== 
     * At most 1000 files (or folders) in multi-selection dialog 
         If you wish to select more, please modify the MAX_SELECTION in C code, or change the CString array to a CList. 
+
+    * Selecting folders/files at the same time is not implemented as it could not return the correct filenames in XP when extensions are hidden. 
+
     * The major compatibility issue is in "XPThumbnailDialog.cpp". 
       
         Please read "XPThumbnailDialog.cpp" carefully if you 're serious about future compatibility. 
