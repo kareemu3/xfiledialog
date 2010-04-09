@@ -36,8 +36,10 @@
    In xfiledialog's appletdemo directory
    {{{
    cd ..
-   jar cvf xfiledialog_dll.jar *.dll *.manifest
-   move xfiledialog_dll.jar appletdemo
+   jar cvf win_x86_dll.jar  xfiledialog.dll xfiledialog.dll.manifest
+   jar cvf win_x64_dll.jar  xfiledialog64.dll xfiledialog64.dll.manifest
+   move win_x86_dll.jar appletdemo
+   move win_x64_dll.jar appletdemo
    cd appletdemo
    }}}
 
@@ -45,7 +47,8 @@
    Important! Sign the nativelib jar file too! 
 
    {{{
-   jarsigner xfiledialog_dll.jar personalkey 
+   jarsigner win_x86_dll.jar personalkey 
+   jarsigner win_x64_dll.jar personalkey
    }}}
 
    Otherwise, the applet can not load the library and may throw an 
@@ -67,23 +70,32 @@
 	    <information>
         	<title>helloapplet</title>
 	        <vendor>stevpan</vendor>
-	    </information>
+	</information>
+
+	    <resources os="Windows" arch="x86">
+		<nativelib href="win_x86_dll.jar" />
+	    </resources>
+
+	    <resources os="Windows" arch="amd64">
+		<nativelib href="win_x64_dll.jar" />
+	    </resources>
+
 	    <resources>
         	<!-- Application Resources -->
 	        <j2se version="1.6+"
         	      href="http://java.sun.com/products/autodl/j2se" />
 	        <jar href="hello.jar" main="true" />
-		<nativelib href="xfiledialog_dll.jar" />
-
 	    </resources>
+
+
 	    <applet-desc 
         	 name="helloapplet"
 	         main-class="helloapplet"
-        	 width="600"
-	         height="400">
+        	 width="640"
+	         height="480">
 	     </applet-desc>
 	     <update check="background"/>
-	</jnlp>					
+	</jnlp>				
        }}}
 
       * Write the html/javascript code 
