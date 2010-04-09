@@ -3,7 +3,16 @@
 
 === Introduction ====
 
-It's recommended to use XFileDialog to replace AWT's FileDialog. Since they have similar interface, an AWT FileDialog object can be easily replaced with an XFileDialog object. 
+ XFileDialog implements several frequently-used native FileDialog functions. 
+   # getFile()   (single-selection, Load mode)
+   # getFiles()  (multi-selection, Load mode)
+   # getFolder() (single-selection, Load mode)
+   # getFolders() (multi-selection, Load mode)
+   # getSaveFile() (single-selection, Save mode)
+   # setThumbnail(bool val) (turn on thumbnail view mode) 
+
+ The internal native mode is determined by these functions, therefore you do not need to call setMode() in XFileDialog. 
+
 
 It's recommended to make a test before using in your environment. Please read the restrictions carefully if you wish to use it in important apps. 
 
@@ -53,10 +62,9 @@ It's recommended to make a test before using in your environment. Please read th
      
   * XFileDialog may cause rendering artifacts when working with some third party Java LookandFeels. You can either switch to the default lookandfeels (NIMBUS,OCEAN,system) or ask authors of these LAFs for technical support. 
    
-  * About "last visit" location: 
-    Currently, this should be done in users' program. I use a String array to keep currentDirs of all my dialogs and save them to configuration file when exiting. 
+  * Disk-low may make XFileDialog very slow. Pay attention to your free hard-disk space. If it's lower than 2G bytes, please delete some files and empty the dust-bin. 
 
-     setDirecotry() is called before getFile() function. 
+  * If the initial directory of XFileDialog has too many files, the startup of XFileDialog may be slow. 
 
 ===Restrictions:=== 
     * At most 1000 files (or folders) in multi-selection dialog 
