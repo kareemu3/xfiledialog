@@ -35,14 +35,14 @@ The following procedures work in 32 bit Windows and require command prompt.
 
 ==== To compile 64 bit X64 DLL ====
 
-  * Add JDK's bin directory into the system variable "PATH" 
+  * Add 64-bit JDK's bin directory into the system variable "PATH" 
   * Set up the Visual stduio's environment variables 
      e.g. run the following command 
      {{{
        c:\vs2008\VC\bin\x86_amd64\vcvarsx86_amd64.bat
      }}}  
   * Edit the compile64.bat: 
-    according to your JDK home directory and visual studio home directory, set the correct include directories in the "cl" command 
+    according to your 64-bit JDK home directory and visual studio home directory, set the correct include directories in the "cl" command 
   * Run compile64.bat in xfiledialog's root directory. 
   * If the compilation is successful, a new file "xfiledialog64.dll"will be created. 
   * Test 
