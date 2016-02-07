@@ -1,0 +1,109 @@
+## The implementation of XFileDialog ##
+
+> Read the following links if you wish to compile it yourself or modify the code.
+
+> Email me if you find anything wrong in XFileDialog, or figure out some better implementation.
+
+
+### Section 1: compilation ###
+
+  1. 1 Compilation of C++ code from the command-line
+
+  * http://msdn.microsoft.com/en-us/library/ms235639(VS.80).aspx
+
+  1. 2 JNI tutorial provided by Oracle(sun)
+
+  * http://java.sun.com/developer/onlineTraining/Programming/JDCBook/jni.html
+
+  1. 3 Integration of Windows handle and Java frame handle is based on:
+
+  * How to get window handle with jawt.dll
+
+> http://forums.sun.com/thread.jspa?threadID=593759
+
+> http://stackoverflow.com/questions/386792/in-java-swing-how-do-you-get-a-win32-window-handle-hwnd-reference-to-a-window
+
+
+### Section 2: Implementation based on CFileDialog and IFileDialog ###
+
+
+> 2.1 Multi-Selection is based on CFileDialog in all platforms
+
+  * Introduction to CFileDialog class on MSDN
+
+> http://msdn.microsoft.com/en-us/library/dk77e5e7.aspx
+
+
+
+> 2.2 Folder-selection in XP is based on customization of CFileDialog
+
+  * Microsoft's ofnking examples (November 21, 2006) :
+
+> http://support.microsoft.com/kb/195034
+
+  * CFolderDialog by Rommel Santor (2003)
+
+> http://www.codeguru.com/cpp/w-d/dislog/dialogforselectingfolders/comments.php/c1883/?thread=24384
+
+
+> 2.3 Folder selection in Vista is based on IFileDialog
+
+  * Introduction to Vista IFileDialog (Common Item Dialog)
+
+> http://msdn.microsoft.com/en-us/library/bb776913(VS.85).aspx
+
+
+> 2.4 Setting thumbnail-viewmode under XP/Vista/Win7 is still based on customization of CFileDialog
+
+> http://msdn.microsoft.com/en-us/magazine/cc164009.aspx
+
+> http://www.codeproject.com/KB/dialog/XFolderDialog.aspx
+
+> 2.5 Porting from 32 bit to 64 bit
+
+> http://msdn.microsoft.com/en-us/library/ms644898(v=VS.85).aspx
+
+### Section 3: Integration between Windows Unicode and Java Unicode ###
+
+> 3.1 Get familiar with the confusing terminology:
+
+  * In Windows: SBCS often refers to ISO-8859-1 or ASCII charset
+
+  * In Windows: MBCS actually is equal to Windows "ANSI" in many cases.
+
+  * In Windows: Unicode actually often means UTF-16
+
+  * Although UTF-16 is a variable-width encoding, most characters in UTF-16 actually is 2 bytes or 16bit.
+
+> 3.2 What's Unicode
+
+  * About windows encoding codepage
+
+> http://en.wikipedia.org/wiki/Windows_code_page
+
+  * About charset: SBCS/MBCS/Unicode
+
+> http://www.ibm.com/developerworks/library/codepages.html
+
+  * UTF faq:
+
+> http://unicode.org/faq/utf_bom.html
+
+  * What is Charset, coded character set,  character-encoding scheme?
+
+> http://java.sun.com/j2se/1.4.2/docs/api/java/nio/charset/Charset.html
+
+  * Unicode programing in Windows:
+
+> http://en.wikibooks.org/wiki/Windows_Programming/Unicode
+
+  * Languages supported in Unicode's BMP (Basic Multi-lingual Plane)
+
+> http://en.wikipedia.org/wiki/Mapping_of_Unicode_character_planes
+
+
+### Section 4: Other related projects: ###
+
+  * gtkjfilechooser: gtk filedialog for Java/Swing under Linux
+
+> http://code.google.com/p/gtkjfilechooser/

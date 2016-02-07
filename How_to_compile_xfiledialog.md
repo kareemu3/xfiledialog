@@ -1,0 +1,55 @@
+### Requirements ###
+
+  * JDK 6 should be installed
+  * Visual Studio 2008 or higher (VS express version does not work)
+
+### Details ###
+
+The following procedures work in 32 bit Windows and require command prompt.
+
+
+**Note**: If your CPU belongs to X64 (amd64, pentium 4 with EM64T, intel multi-core with EM64T) and you are using 64 bit Java/Windows, or you prefer GUI dev environment, please modify it yourself.
+
+
+#### To compile 32 bit X86 DLL ####
+
+  * Add JDK's bin directory into the system variable "PATH"
+  * Set up the Visual stduio's environment variables
+> > e.g. run the following command
+```
+         c:\vs2008\VC\bin\vcvars32.bat
+```
+
+  * Edit the compile.bat:
+> > according to your JDK home directory and visual studio home directory, set the correct include directories in the "cl" command
+
+  * Run compile.bat in xfiledialog's root directory.
+  * If the compilation is successful, a new file "xfiledialog.dll"will be created.
+  * Test
+> > e.g. run the following command in xfiledialog's root directory
+```
+      run.bat 
+```
+
+
+#### To compile 64 bit X64 DLL ####
+
+  * Add 64-bit JDK's bin directory into the system variable "PATH"
+  * Set up the Visual stduio's environment variables
+> > e.g. run the following command
+```
+       c:\vs2008\VC\bin\x86_amd64\vcvarsx86_amd64.bat
+```
+  * Edit the compile64.bat:
+> > according to your 64-bit JDK home directory and visual studio home directory, set the correct include directories in the "cl" command
+  * Run compile64.bat in xfiledialog's root directory.
+  * If the compilation is successful, a new file "xfiledialog64.dll"will be created.
+  * Test
+
+
+> e.g.
+    1. copy the xfiledialog64.dll, helloworld.class, xfiledialog.jar, run.bat to a Windows X64 machine.
+> > 2. In the X64 machine, run the following command
+```
+      run.bat 
+```
